@@ -1,0 +1,21 @@
+@font-face{
+    font-family: Abel;
+    src: url("../fonts/abelrusbydaymarius.ttf");
+}
+@font-face{
+    font-family: Actor;
+    src: url("../fonts/Actor-Regular.ttf");
+}
+@font-face{
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto-Light.ttf");
+}
+@font-face{
+    font-family: Roboto-Regular;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: Roboto-Thin;
+    src: url("../fonts/Roboto-Thin.ttf");
+}
+

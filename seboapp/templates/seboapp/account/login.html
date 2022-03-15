@@ -1,0 +1,17 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %}Вход пользователя{% endblock %}
+
+{% block content %}
+<h2 class="title-form">Вход</h2>
+{% if user.is_authenticated %}
+<p>Вы уже выполнили вход</p>
+{% else %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="hidden" name="text" value="{{ next }}">
+  <input type="submit" value="вход">
+</form>
+{% endif %}
+{% endblock %}

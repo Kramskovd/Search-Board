@@ -1,0 +1,12 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %}Добавление записи объявления{% endblock %}
+
+{% block content %}
+  <h1 class="title-form">Добавление</h1>
+  <form class="add-form" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">добавить</button>
+  </form>
+{% endblock %}

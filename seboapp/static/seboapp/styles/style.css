@@ -1,0 +1,356 @@
+html{
+    background-color: #000E14;
+    color: white;
+    margin: 0;
+}
+body{
+    margin:0;
+}
+
+.logo{
+    font-size: 48px;
+    font-family: "Actor";
+}
+.sub-logo{
+    font-size: 18px;
+    font-family: "Abel";
+    vertical-align: 5px;
+    margin-left: 20px
+}
+.head-container .logo, .sub-logo{
+
+    display: inline-block;
+}
+
+.head-container, .body-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.head-container nav a{
+    margin-right: 40px;
+    font-weight: bold;
+    font-size: 24px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: "Abel";
+}
+.body-container .filter-menu{
+    font-family: "Abel";
+    margin: 30px 0;
+}
+.body-container .filter-menu .filter{
+    margin-right: 10px;
+
+    display: inline-block;
+}
+.body-container .filter-menu .filter .title-button{
+    font-size: 20px;
+}
+.body-container .filter-menu .filter #wrap-filter-price{
+    position: relative;
+    margin: 0;
+}
+.body-container .filter-menu .filter .wrap-filter
+{
+    position: relative;
+
+    margin: 10px 0;
+}
+.body-container .filter-menu .filter .wrap-filter .button-filter{
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 160px;
+    padding: 5px 20px 5px 6px;
+    position: relative;
+    cursor: pointer;
+}
+.body-container .filter-menu .filter .wrap-filter .button-filter img{
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+    top: 12px;
+    right: 4px;
+    position: absolute;
+}
+
+.body-container .filter-menu .filter .wrap-filter .filter-list{
+    width: 100%;
+    position: absolute  ;
+    height: 100px;
+    color: white;
+    overflow-y: scroll;
+    background-color: #3d8683;;
+    border: 1px solid white;
+    border-top: 0;
+
+    border-radius: 0;
+}
+.body-container .filter-menu .filter .wrap-filter .filter-list li{
+cursor: pointer;
+}
+.body-container .filter-menu .filter .wrap-filter #category-list{
+    display:none;
+}
+.body-container .filter-menu .filter .wrap-filter #thing-list{
+    display: none;
+}
+.body-container .filter-menu .filter .wrap-filter #sort-list{
+    display: none;
+}
+ul{
+    margin: 2px 0px 2px 10px;
+    padding: 2px 0 2px;
+}
+ul li{
+    list-style: none;
+}
+.body-container .filter-menu .filter .wrap-filter .price-filter input{
+    background-color: #000E14;
+    color: #fff;
+    outline: none;
+    width: 55px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+.body-container .filter-menu .wrap-filter-button .filter-button span{
+    text-align: center;
+}
+.body-container .filter-menu .filter .wrap-filter .price-filter p{
+    display: inline-block;
+    margin-right: 2px;
+}
+.body-container .filter-menu .filter .wrap-filter .price-filter .price-input-to{
+    margin-left: 2px;
+}
+.body-container .filter-menu .filter .wrap-filter .price-filter .price-input-from{
+    margin-right: 10px;
+}
+.body-container .card-product-wrapper{
+    width: 95%;
+
+    margin: 0 auto 100px;
+}
+.body-container .card-product-wrapper .card-product-image{
+    width: 500px;
+    height: 300px;
+    margin-right: 10px;
+}
+.body-container .card-product-wrapper .card-product-image img{
+    background-size: inherit;
+    width: 100%;
+    height: 100%;
+}
+.body-container .card-product-wrapper .card-product-image, .body-container .card-product-wrapper .card-product-board{
+    display: inline-block;
+    vertical-align: top;
+}
+.body-container .card-product-wrapper .card-product-board{
+    height: 300px;
+    position: relative;
+    width: 500px;
+}
+.body-container .card-product-wrapper .card-product-board .card-product-container{
+    height: 200px;
+}
+.body-container .card-product-wrapper .card-product-board .card-product-container p{
+font-family: "Roboto-Regular";
+    margin: 0;
+}
+.body-container .card-product-wrapper .card-product-board  .card-product-button a, .body-container .filter-menu .wrap-filter-button .filter-button{
+
+    font-family: "Roboto-Light";
+    cursor: pointer;
+    font-size: 17px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+.body-container .card-product-wrapper .card-product-board  .card-product-button{
+    position: absolute;
+    bottom: 2px;
+}
+.body-container .card-product-wrapper .card-product-board  .card-product-button a{
+
+    background-color: #23312E;
+    padding: 5px 10px;
+
+}
+.body-container .filter-menu .wrap-filter-button .filter-button{
+    padding: 5px 20px;
+    background-color: #193644;
+}
+.card-product-name{
+    margin: 0;
+    font-family: "Roboto-Regular";
+}
+ .card-product-description{
+    padding: 0 0 20px;
+    font-family: "Roboto-Light";
+}
+.card-product-author{
+    font-family: "Roboto-Thin";
+
+}
+.card-product-price{
+    font-family: "Roboto-Thin";
+    padding-bottom: 20px;
+}
+ .card-product-price span{
+    color: #2cff00;
+}
+ .card-product-author span{
+    color: #00dbff;
+}
+.card-product-date{
+    font-family: "Roboto-Thin";
+    padding-left: 310px;
+}
+.hide-block-id{
+    display: none;
+}
+.selected-filters span{
+    padding-right: 20px;
+}
+.main-container-product{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.main-container-product .product-container{
+    display: inline-block;
+    vertical-align: top;
+}
+.main-container-product .information-product-container .card-product-date{
+    padding: 0;
+    bottom: 0;
+    position: absolute;
+}
+.main-container-product .information-product-container{
+    position: relative;
+    padding-left: 20px;
+    height: 300px;
+}
+.main-container-product .image-product-container img{
+    width: 500px;
+    height: 300px;
+}
+.contacts{
+    margin-top: 20px;
+}
+.contacts .seller{
+    font-family: "Roboto-Regular";
+    font-size: 18px;
+}
+.contacts p{
+    margin: 0;
+    font-family: "Roboto-Light";
+}
+.title-form, .title-info{
+    font-family: "Roboto-Regular";
+}
+.add-form{
+    font-family: "Roboto-Light";
+}
+input, textarea{
+    background-color: RGB(0,0,0,0);
+    border: 1px  solid #fff;
+    border-top:0;
+    border-left: 0;
+    border-right: 0;
+    color: #fff;
+}
+
+input[type='submit']{
+    font-family: "Roboto-Regular";
+    font-size: 17px;
+    background-color: #51a03b;
+    border: none;
+    border-radius: 4px;
+}
+.add-form #id_description{
+    vertical-align: top;
+    height: 70px;
+    width: 270px;
+}
+.add-form #id_price{
+    width: 30px;
+}
+.add-form #id_price ::after {
+    content: "руб.";
+    bottom: 20px;
+    color: #fff;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+}
+.add-form #id_image, #id_thing-category{
+    border: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.change-password{
+    font-family: "Roboto-Regular";
+    color: #279f83;
+    padding-bottom: 20px;
+    display: block;
+    font-size: 18px;
+    text-decoration: underline;
+}
+label{
+    font-family: "Roboto-Light";
+}
+.container-paginator{
+    width: 100%;
+}
+.paginator{
+    font-family: "Roboto-Light";
+    width:190px;
+    margin: 0 auto;
+    padding: 30px 100px;
+    position: relative;
+}
+.paginator .arr-next, .arr-prev{
+    background-image: url("../images/next.png");
+    width: 16px;
+    display: inline-block;
+    background-size: cover;
+    height: 16px;
+    position: absolute;
+    top: 32px;
+
+}
+.paginator .arr-next{
+    left: 230px;
+}
+.paginator .arr-prev{
+    left: 71px;
+    transform: rotate(180deg);
+}
+.card-product-wrapper:last-child{
+    margin-bottom: 0;
+}
+.profile-product{
+    position: relative;
+}
+.profile-product .delete-product{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 200px;
+    background-size: cover;
+    background-image: url("../images/close.png");
+    width: 24px;
+    height: 24px;
+}

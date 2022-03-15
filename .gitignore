@@ -1,0 +1,5 @@
+media/
+migrations/
+sebo/settings.py
+__pycache__
+.idea

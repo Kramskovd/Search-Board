@@ -1,0 +1,103 @@
+{% extends "seboapp/layout/basic.html" %}
+{% load static %}
+{% block content %}
+<nav>
+    <div class="filter-menu">
+        <div class="filter">
+            <span class="title-button" >категории</span>
+            <div class="wrap-filter">
+                <a class="category-filter button-filter" id="fcategory" ><span id="choice-category">выбрать категорию</span><img src="{% static 'seboapp/images/polygon3.svg' %}"></a>
+                <div class="filter-list" id="category-list">
+                    <ul>
+                        {% for category in categories %}
+                            <li><a class="title-category-button"  onclick="">{{ category.name_category }}</a><span class="hide-block-id">{{ category.id }}</span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <span class="title-button" >вид</span>
+            <div class="wrap-filter">
+                <a class="type-filter button-filter" id="fthing" ><span id="choice-thing" >выбрать вид</span><img src="{% static 'seboapp/images/polygon3.svg' %}"></a>
+                <div class="filter-list" id="thing-list">
+                    <ul id="thing-list-content">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <span class="title-button" ><span id="choice-sort">сортировать</span></span>
+            <div class="wrap-filter">
+                <a class="type-filter button-filter" id="fsort" ><span>выбрать</span><img src="{% static 'seboapp/images/polygon3.svg' %}"></a>
+                <div class="filter-list" id="sort-list">
+                    <ul>
+                        <li id="price-sort">по цене</li>
+                        <li id="date-sort">по дате</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <span class="title-button" >цена</span>
+            <div class="wrap-filter" id="wrap-filter-price">
+                <div class="price-filter">
+                    <p>от</p>
+                    <input class="price-input-from" type="text" name="" id="input-from" value="{{ price_from }}">
+                    <p>до</p>
+                    <input class="price-input-to" id="input-to" type="text" value="{{ price_to }}">
+                    <p>руб.</p>
+                </div>
+            </div>
+        </div>
+        <div class="filter wrap-filter-button">
+            <div class="filter-button" id="filter-button"><span>найти</span></div>
+        </div>
+        <div class="selected-filters"><span>категория: {{ name_category }}</span><span>вид: {{ name_thing }}</span><span>цена от: {{ price_from }} до: {{ price_to }}</span></div>
+    </div>
+
+</nav>
+<div class="card-product-container">
+{% for product in products %}
+        <div class="card-product-wrapper">
+            <div class="card-product-image">
+                <img src="{{ product.image.url }}">
+            </div>
+            <div class="card-product-board">
+                <div class="card-product-container">
+                    <h2 class="card-product-name">{{ product.name_product }}</h2>
+                    <p class="card-product-author">продавец: <span>{{ product.user.username }}</span></p>
+                    <p class="card-product-price">цена: <span>{{ product.price }} руб.</span></p>
+                    <p class="card-product-description">{{ product.description }}</p>
+                </div>
+                <div class="card-product-button">
+                    <a type="button" href="/product/{{ product.pk }}">связаться</a>
+                    <span class="card-product-date">{{ product.date_published|date:"d.m.Y" }}</span>
+                </div>
+            </div>
+
+        </div>
+{% endfor %}
+</div>
+<div class="container-paginator">
+    <div class="paginator">
+    {% if page.has_previous %}
+        {% if full_path %}
+        <a class="arr-prev" href="{{ full_path }}&page={{ page.previous_page_number }}"></a>
+        {% else %}
+        <a class="arr-prev" href="?page={{ page.previous_page_number }}"></a>
+        {% endif %}
+    {% endif %}
+    <span>cтраница {{ page.number }} из {{page.paginator.num_pages}}</span>
+    {% if page.has_next %}
+        {% if full_path %}
+        <a class="arr-next" href="{{ full_path }}&page={{ page.next_page_number }}"></a>
+        {% else %}
+        <a class="arr-next" href="?page={{ page.next_page_number }}"></a>
+        {% endif %}
+    {% endif %}
+</div>
+</div>
+
+
+{% endblock %}

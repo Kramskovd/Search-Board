@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'seboapp/styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'seboapp/styles/fonts.css' %}">
+</head>
+<body>
+    <header>
+        <div class="head-container">
+            <h1 class="logo">SeBo</h1> <h2 class="sub-logo">доска вещей</h2>
+            <nav>
+                <a href="{% url 'sebo:index' %}">главная</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'sebo:add' %}">добавить</a>
+                <a href="{% url 'sebo:profile' %}">профиль</a>
+                <a href="{% url 'sebo:profile_change' %}">изменить данные</a>
+                <a href="{% url 'sebo:logout' %}">выйти</a>
+                {% else %}
+                <a href="{% url 'sebo:login' %}">вход</a>
+                <a href="{% url 'sebo:register' %}">регистрация</a>
+                {% endif %}
+            </nav>
+        </div>
+
+    </header>
+    <div class="body-container">
+
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'seboapp/js/script.js' %}"></script>
+</body>
+</html>

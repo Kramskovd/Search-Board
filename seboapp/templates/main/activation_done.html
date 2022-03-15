@@ -1,0 +1,9 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %} Активация прошла успешно {% endblock %}
+
+{% block content %}
+<h2>Активция</h2>
+<p>Пользователь успешно активирован</p>
+<p><a href="{% url 'sebo:login' %}"> Войти на сайт</a></p>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %}{{ user.username}} {% endblock %}
+
+{% block content %}
+<h2 class="title-info">{{ user.username }}</h2>
+{% if user.first_name and user.last_name %}
+<h3 class="title-info">Добрый день, {{ user.first_name }} {{ user.last_name}}</h3>
+{% endif %}
+<h3 class="title-info">Ваши объявления</h3>
+{% for product in products %}
+<div class="main-container-product profile-product">
+    <div class="image-product-container product-container">
+        <img src="{{ product.image.url }}" alt="">
+    </div>
+    <div class="information-product-container product-container">
+        <h2 class="card-product-name">{{ product.name_product }}</h2>
+        <p class="card-product-price">цена: <span>{{ product.price }} руб.</span></p>
+        <p class="card-product-description">{{ product.description }}</p>
+        <p class="card-product-date">{{ product.date_published}}</p>
+    </div>
+    <a class="delete-product" href="/delete_product?pk={{ product.pk }}" title="удалить">
+
+    </a>
+</div>
+{% endfor %}
+{% endblock %}

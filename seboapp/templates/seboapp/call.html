@@ -1,0 +1,27 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %}{{ product.name_product }}{% endblock %}
+
+{% block content %}
+<div class="contacts">
+    {% if product.user.first_name and product.user.last_name %}
+    <p class="seller">продавец: {{ product.user.first_name }} {{ product.user.last_name }}</p>
+    {% else %}
+    <p class="seller">продавец: {{ product.user.username }} </p>
+    {% endif %}
+    <p>телефон: {{ product.user.number }}</p>
+    <p>email: {{ product.user.email }}</p>
+</div>
+<div class="main-container-product">
+    <div class="image-product-container product-container">
+        <img src="{{ product.image.url }}" alt="">
+    </div>
+    <div class="information-product-container product-container">
+        <h2 class="card-product-name">{{ product.name_product }}</h2>
+        <p class="card-product-author">продавец: <span>{{ product.user.username }}</span></p>
+        <p class="card-product-price">цена: <span>{{ product.price }} руб.</span></p>
+        <p class="card-product-description">{{ product.description }}</p>
+        <p class="card-product-date">{{ product.date_published}}</p>
+    </div>
+</div>
+{% endblock %}

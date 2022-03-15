@@ -1,0 +1,13 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %}Правка личных данных{% endblock %}
+
+{% block content %}
+<h2 class="title-form">Правка личных данных {{ user.username }}</h2>
+<a class="change-password" href="{% url 'sebo:password_change' %}">задать другой пароль</a>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="сохранить">
+</form>
+{% endblock %}

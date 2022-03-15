@@ -1,0 +1,10 @@
+{% extends 'seboapp/layout/basic.html' %}
+
+{% block title %} Ошибка активации {% endblock %}
+
+{% block content %}
+<h2>Активация</h2>
+<h2>Активация пользователя с таким именем уже была произведена
+</h2>
+<a href="{% url 'sebo:login' %}">Войти на сайт</a>
+{% endblock %}
